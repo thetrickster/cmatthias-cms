@@ -1,4 +1,6 @@
 _site
+.bundle
 .vagrant
 .sass-cache
 .users.yml
+Gemfile.lock
