@@ -4,3 +4,5 @@ _site
 .sass-cache
 .users.yml
 Gemfile.lock
+bower_components
+node_modules

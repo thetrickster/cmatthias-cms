@@ -1,5 +1,10 @@
 # Install our project's needs with our Gemfile
+echo ---Installing Jekyll and dependencies---
 cd /srv/www/ && bundle install
+
+# Install any dependencies with bower
+echo ---Installing bower dependencies---
+cd /srv/www/ && bower install
 
 # Setup users file for local netlify-git-api
 echo ---Setting up netlify-git-api .users.yml file---

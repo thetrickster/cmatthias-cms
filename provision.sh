@@ -50,6 +50,9 @@ sudo cp ~/tmp/linux/netlify-git-api /usr/bin/
 sudo chmod +x /usr/bin/netlify-git-api
 rm -rf ~/tmp
 
+echo ---Installing bower for dependency management---
+sudo npm install -g bower
+
 # Vagrant should've created /srv/www according to the Vagrantfile,
 # but let's make sure it exists even if run directly.
 if [[ ! -d '/srv/www' ]]; then
