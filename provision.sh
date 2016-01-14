@@ -7,6 +7,8 @@ echo "Initializing dev environment on VM."
 apt_packages=(
     vim
     curl
+    wget
+    zip # to unzip netlify-git-api binary
     git-core
     nodejs
 )
@@ -39,6 +41,14 @@ source ~/.rvm/scripts/rvm
 
 echo ---Installing Jekyll---
 gem install jekyll bundler --no-ri --no-rdoc
+
+echo ---Installing netlify-git-api binary---
+mkdir ~/tmp
+wget -P ~/tmp/ https://github.com/netlify/netlify-git-api/releases/download/0.0.3/linux.zip
+unzip -d ~/tmp/ ~/tmp/linux.zip
+sudo cp ~/tmp/linux/netlify-git-api /usr/bin/
+sudo chmod +x /usr/bin/netlify-git-api
+rm -rf ~/tmp
 
 # Vagrant should've created /srv/www according to the Vagrantfile,
 # but let's make sure it exists even if run directly.

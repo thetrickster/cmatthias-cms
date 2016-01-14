@@ -1,3 +1,3 @@
 vagrant up
-#vagrant ssh -c "jekyll serve -s /vagrant -d /vagrant/_site --host 0.0.0.0"
-vagrant ssh -c "cd /vagrant && bundle install && bundle exec jekyll serve -s . -d ./_site --host 0.0.0.0"
+vagrant ssh -c "cd /srv/www && bundle exec jekyll server --detach --watch --host 0.0.0.0"
+vagrant ssh -c "cd /srv/www && netlify-git-api serve --host=0.0.0.0"
