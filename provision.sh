@@ -33,6 +33,9 @@ echo "Installing apt-get packages..."
 sudo apt-get install -y ${apt_packages[@]}
 sudo apt-get clean
 
+echo ---Telling git to use CRLF for line endings \(Ahem, windows\!\)---
+sudo git config --global core.autocrlf true
+
 echo ---Installing RVM---
 # http://rvm.io/rvm/install
 gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
