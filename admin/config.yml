@@ -1,7 +1,7 @@
 development:
   backend:
     name: netlify-api
-    url: http://localhost:8080
+    url: http://0.0.0.0:4080
 
 production:
   backend:

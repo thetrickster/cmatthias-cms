@@ -5,7 +5,10 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, path: "project.sh", privileged: false
   config.vm.provision :file, source: "~/.gitconfig", destination: ".gitconfig"
 
+  # Jekyll dev port
   config.vm.network "forwarded_port", guest: 4000, host: 4000, auto_correct: true
+  # Netlify CMS Git API for authentication port
+  config.vm.network "forwarded_port", guest: 4080, host: 4080, auto_correct: true
 
   if vagrant_version >= "1.3.0"
     config.vm.synced_folder "./", "/srv/www", create: true, :owner => "vagrant", :mount_options => [ "dmode=775", "fmode=774" ]
