@@ -1,10 +1,12 @@
 Vagrant.configure(2) do |config|
   vagrant_version = Vagrant::VERSION.sub(/^v/, '')
   config.vm.box = "ubuntu/trusty64"
-  config.vm.provision :shell, path: "provision.sh", privileged: false
-  config.vm.provision :shell, path: "project.sh", privileged: false
-  config.vm.provision :file, source: "~/.gitconfig", destination: ".gitconfig"
 
+  config.vm.provision "fix-no-tty", type: "shell" do |s|
+    s.privileged = false
+    s.inline = "sudo sed -i '/tty/!s/mesg n/tty -s \\&\\& mesg n/' /root/.profile"
+  end
+  
   # Jekyll dev port
   config.vm.network "forwarded_port", guest: 4000, host: 4000, auto_correct: true
   # Netlify CMS Git API for authentication port
@@ -26,4 +28,7 @@ Vagrant.configure(2) do |config|
 
   config.ssh.forward_agent = true
 
+  config.vm.provision :shell, path: "provision.sh", privileged: false
+  config.vm.provision :shell, path: "project.sh", privileged: false
+  config.vm.provision :file, source: "~/.gitconfig", destination: ".gitconfig"
 end

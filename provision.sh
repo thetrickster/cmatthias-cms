@@ -43,7 +43,7 @@ curl -sSL https://get.rvm.io | bash -s stable --ruby --quiet-curl
 source ~/.rvm/scripts/rvm
 
 echo ---Installing Jekyll---
-gem install jekyll bundler --no-ri --no-rdoc
+sudo gem install jekyll bundler --no-ri --no-rdoc
 
 echo ---Installing netlify-git-api binary---
 mkdir ~/tmp
