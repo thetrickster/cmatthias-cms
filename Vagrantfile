@@ -6,11 +6,11 @@ Vagrant.configure(2) do |config|
     s.privileged = false
     s.inline = "sudo sed -i '/tty/!s/mesg n/tty -s \\&\\& mesg n/' /root/.profile"
   end
-  
+
   # Jekyll dev port
-  config.vm.network "forwarded_port", guest: 4000, host: 4000, auto_correct: true
+  config.vm.network "forwarded_port", guest: 4000, host: 80, auto_correct: true
   # Netlify CMS Git API for authentication port
-  config.vm.network "forwarded_port", guest: 4080, host: 4080, auto_correct: true
+  config.vm.network "forwarded_port", guest: 8080, host: 8080, auto_correct: true
 
   if vagrant_version >= "1.3.0"
     config.vm.synced_folder "./", "/srv/www", create: true, :owner => "vagrant", :mount_options => [ "dmode=775", "fmode=774" ]

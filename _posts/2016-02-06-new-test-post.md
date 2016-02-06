@@ -1,7 +1,7 @@
 ---
 layout: post
 title: New Test Post
-categories: "test, dev"
+categories: "testdev"
 cmsUserSlug: new-test-post
 date: 2016-02-06T12:00:00.000Z
 ---
