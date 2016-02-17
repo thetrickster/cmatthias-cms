@@ -11,3 +11,6 @@ echo ---Setting up netlify-git-api .users.yml file---
 if [[ ! -d '/srv/www/.users.yml' ]]; then
   cd /srv/www/ && netlify-git-api users add --name=Admin --email=admin@admin.com --password=admin
 fi
+
+# Install GulpJS
+cd /home/vagrant/ && sudo npm install -g gulp

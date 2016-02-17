@@ -9,6 +9,8 @@ Vagrant.configure(2) do |config|
 
   # Jekyll dev port
   config.vm.network "forwarded_port", guest: 4000, host: 80, auto_correct: true
+  # Broswer sync port
+  config.vm.network "forwarded_port", guest: 3000, host: 3000, auto_correct: true
   # Netlify CMS Git API for authentication port
   config.vm.network "forwarded_port", guest: 8080, host: 8080, auto_correct: true
 

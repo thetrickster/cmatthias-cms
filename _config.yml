@@ -1,13 +1,15 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: Chris Matthias
+email: chris.matthias@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-url: "http://yourdomain.com" # the base hostname & protocol for your site - used for feed.xml
-twitter_username: jekyllrb
-github_username:  jekyll
+  I help graphic designers and ad agencies wrangle the web for their clients
+  across all browsers and on new devices like mobile phones and tablets.
+  Don't sweat the web&emdash; that's what friends are for.
+url: "http://www.chrismatthias.com" # the base hostname & protocol for your site - used for feed.xml
+twitter_username: thetrickster88
+github_username:  thetrickster
 
 # Build settings
 markdown: kramdown
+
+exclude: ["node_modules", "gulpfile.js", "package.json"]
