@@ -30,9 +30,18 @@ gulp.task('jekyll-build', function (done) {
 });
 
 /**
+ * Build the Jekyll Site incrementally while in dev
+ */
+gulp.task('jekyll-incremental', function (done) {
+    browser.notify(messages.jekyllBuild);
+    return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--incremental'], {stdio: 'inherit'})
+        .on('close', done);
+});
+
+/**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-incremental'], function () {
     browser.reload();
 });
 
@@ -82,6 +91,11 @@ gulp.task('watch', function () {
     gulp.watch(['assets/scss/*.scss'], ['sass']);
     gulp.watch(['assets/css/app.css', '*.html', '_layouts/*.html', '_posts/*', '_data/*'], ['jekyll-rebuild']);
 });
+
+/**
+ * Add a build command to build our site for production
+ */
+gulp.task('build', ['sass','jekyll-build']);
 
 /**
  * Default task, running just `gulp` will compile the sass,
