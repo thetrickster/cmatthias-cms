@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Page Meta -->
   <title>{% if page.meta_title %}{{ page.meta_title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
@@ -10,7 +10,7 @@
   <!-- Additional Metas -->
   <meta name=apple-mobile-web-app-capable content="yes">
   <meta name=apple-mobile-web-app-status-bar-style content="black">
-  <meta name="theme-color" content="#0099CC">
+  <meta name="theme-color" content="{{ site.branding.theme_color_primary }}">
 
   <!-- Favicons -->
   <link href="{{ site.url }}/favicon.ico" rel="shortcut icon" type="image/x-icon">
@@ -26,10 +26,10 @@
   <meta property="og:image" content="http://www.chrismatthias.com/cm/img/cm-outline.png" />
   <meta property="og:image" content="http://www.chrismatthias.com/cm/img/cm-logo-blue-sm.png" />
 
-  <meta name="google-site-verification" content="k3_m0XO2nKKTOQ-RMLnQ5GfoTdOsUSz_7Wiz3BN42bs">
+  <meta name="google-site-verification" content="{{ site.google-verification }}">
 
 
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="assets/css/app.css">
   <link rel="canonical" href="{{ page.url | replace:'index.html',''  }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="feed.xml" />
 </head>

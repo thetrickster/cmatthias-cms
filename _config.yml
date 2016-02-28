@@ -12,4 +12,47 @@ github_username:  thetrickster
 # Build settings
 markdown: kramdown
 
-exclude: ["node_modules", "gulpfile.js", "package.json", "bower_components"]
+# Sass settings
+# sass:
+  # sass_dir: "assets/scss"
+
+
+# Exclude files from jekyll build
+exclude:
+  - "assets/js/app.js"
+  - "assets/scss/*.scss"
+  - "assets/vendor/foundation-sites/"
+  - "assets/vendor/jquery/"
+  - "assets/vendor/motion-ui/"
+  - "assets/vendor/what-input/"
+  - "bower.json"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "gulpfile.js"
+  - "LICENSE.md"
+  - "node_modules"
+  - "npm-debug.log"
+  - "package.json"
+  - "README.md"
+
+# Verification Codes
+google-verification: k3_m0XO2nKKTOQ-RMLnQ5GfoTdOsUSz_7Wiz3BN42bs
+
+# Site Branding
+branding:
+  theme_color_primary: "#0099CC"
+
+# Plugins
+gems:             ["jekyll-sitemap", "jekyll-paginate"]
+
+# Conversion
+incremental:      true
+
+# Serving
+# url:            ""
+# baseurl:        "" # does not include hostname
+
+# Outputting
+permalink:        "/blog/:year/:title/"
+paginate_path:    "/blog/page:num"
+paginate:         5

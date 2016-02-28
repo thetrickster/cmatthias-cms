@@ -1,13 +1,17 @@
 {
-  "name": "cmatthias-jekyll-netlify-cms",
+  "name": "cmatthias-cms",
   "authors": [
     "Chris Matthias <chris.matthias@gmail.com>"
   ],
   "description": "Site based on Jekyll hosted on Netlify using their CMS admin area",
-  "main": "start.sh",
+  "main": "gulpfile.js",
   "moduleType": [],
   "license": "MIT",
   "homepage": "http://www.chrismatthias.com",
+  "dependencies": {
+    "foundation-sites": "~6.2.0",
+    "motion-ui": "~1.2.2"
+  },
   "private": true,
   "ignore": [
     "**/.*",
