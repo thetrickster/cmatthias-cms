@@ -1,0 +1,2 @@
+vagrant up
+vagrant ssh -c "cd /srv/www && netlify-git-api serve --host=0.0.0.0 --port=8080"
