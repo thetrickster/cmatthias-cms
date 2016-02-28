@@ -34,8 +34,8 @@ exclude:
   - "npm-debug.log"
   - "package.json"
   - "README.md"
-  - "start.sh"
-  - "stop.sh"
+  - "start"
+  - "stop"
 
 # Verification Codes
 google-verification: k3_m0XO2nKKTOQ-RMLnQ5GfoTdOsUSz_7Wiz3BN42bs

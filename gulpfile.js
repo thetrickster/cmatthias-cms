@@ -77,6 +77,16 @@ gulp.task('sass', function () {
 });
 
 /**
+ * Head Scripts
+ */
+gulp.task('scripts-head', function() {
+  return gulp.src('./assets/js/modernizr.min.js')
+        .pipe($.rename('scripts_head.js'))
+        .pipe(gulp.dest('./_site/assets/js'))
+        .pipe(gulp.dest('./assets/js'));
+});
+
+/**
  * Revision asset files in the source dir and write a manifest file
  */
 gulp.task('revision', function() {

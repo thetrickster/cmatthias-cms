@@ -2,6 +2,7 @@
 assets/css/app.css
 
 # JavaScript
+assets/js/scripts_head.js
 assets/js/app.js
 rev-manifest.json
 
