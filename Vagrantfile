@@ -1,5 +1,6 @@
 Vagrant.configure(2) do |config|
   vagrant_version = Vagrant::VERSION.sub(/^v/, '')
+  config.env.enable
   config.vm.box = "ubuntu/trusty64"
 
   config.vm.provision "fix-no-tty", type: "shell" do |s|
@@ -9,8 +10,10 @@ Vagrant.configure(2) do |config|
 
   # Jekyll dev port
   config.vm.network "forwarded_port", guest: 4000, host: 80, auto_correct: true
-  # Broswer sync port
+  # BrowserSync port
   config.vm.network "forwarded_port", guest: 3000, host: 3000, auto_correct: true
+  # BrowserSync UI port
+  config.vm.network "forwarded_port", guest: 3001, host: 3001, auto_correct: true
   # Netlify CMS Git API for authentication port
   config.vm.network "forwarded_port", guest: 8080, host: 8080, auto_correct: true
 
@@ -32,5 +35,4 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision :shell, path: "provision.sh", privileged: false
   config.vm.provision :shell, path: "project.sh", privileged: false
-  config.vm.provision :file, source: "~/.gitconfig", destination: ".gitconfig"
 end

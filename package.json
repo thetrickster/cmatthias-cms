@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
-    "build": "gulp jekyll-build"
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -13,22 +13,22 @@
   },
   "author": "Chris Matthias",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "browser-sync": "^2.10.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-load-plugins": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-rev": "^7.0.0",
-    "gulp-sass": "^2.1.0",
+    "gulp-sass": "^3.1.0",
     "media-query-extractor": "^0.1.1",
-    "node-bourbon": "^4.2.3"
+    "node-bourbon": "^4.2.3",
+    "gulp-extract-media-queries": "^1.1.0"
   },
   "bugs": {
     "url": "https://github.com/thetrickster/cmatthias-cms/issues"
   },
   "homepage": "https://github.com/thetrickster/cmatthias-cms#readme",
-  "dependencies": {
-    "gulp-autoprefixer": "^3.1.0"
+  "devDependencies": {
   }
 }

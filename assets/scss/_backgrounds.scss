@@ -1,0 +1,10 @@
+@mixin blue-bg() {
+  background-image: url('/assets/images/bluebg-phone.jpg');
+
+  @include breakpoint(medium) {
+    background-image: url('/assets/images/bluebg-ipad.jpg');
+  }
+  @include breakpoint(large) {
+    background-image: url('/assets/images/bluebg.jpg');
+  }
+}

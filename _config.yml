@@ -5,7 +5,6 @@ description: > # this means to ignore newlines until "baseurl:"
   I help graphic designers and ad agencies wrangle the web for their clients
   across all browsers and on new devices like mobile phones and tablets.
   Don't sweat the web&emdash; that's what friends are for.
-url: "http://www.chrismatthias.com" # the base hostname & protocol for your site - used for feed.xml
 twitter_username: thetrickster88
 github_username:  thetrickster
 
@@ -25,6 +24,7 @@ exclude:
   - "assets/vendor/jquery/"
   - "assets/vendor/motion-ui/"
   - "assets/vendor/what-input/"
+  - "assets/vendor/history.js/"
   - "bower.json"
   - "Gemfile"
   - "Gemfile.lock"
@@ -36,6 +36,11 @@ exclude:
   - "README.md"
   - "start"
   - "stop"
+  - "project.sh"
+  - "provision.sh"
+  - "Rakefile"
+  - "Vagrantfile"
+  - "netlify.toml"
 
 # Verification Codes
 google-verification: k3_m0XO2nKKTOQ-RMLnQ5GfoTdOsUSz_7Wiz3BN42bs
@@ -45,16 +50,35 @@ branding:
   theme_color_primary: "#0099CC"
 
 # Plugins
-gems:             ["jekyll-sitemap", "jekyll-paginate"]
+gems:
+  - "jekyll-sitemap"
+  - "jekyll-paginate"
+  # - "jekyll-contentful"
+  - "jekyll-contentful-data-import"
+  - "octopress-minify-html"
 
 # Conversion
 # incremental:      true
 
 # Serving
-# url:            ""
+# url: "http://www.chrismatthias.com" # the base hostname & protocol for your site - used for feed.xml
+url:            ""
 # baseurl:        "" # does not include hostname
 
 # Outputting
-permalink:        "/blog/:year/:title/"
-paginate_path:    "/blog/page:num"
+permalink:        "/:categories/:year/:title/"
+paginate_path:    "/:categories/page:num"
 paginate:         5
+
+# Danger is my middle name!
+safe: false
+
+# Compress HTML for production
+minify_html: true
+incremental: false
+
+contentful:
+  spaces:
+    - chris.matthias:
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN

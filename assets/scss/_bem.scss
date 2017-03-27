@@ -1,0 +1,52 @@
+////
+// BEM Helpers/Mixins
+////
+
+/// Block Element
+/// @access public
+/// @param {String} $element - Element's name
+@mixin element($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+/// Block Modifier
+/// @access public
+/// @param {String} $modifier - Modifier's name
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+/// @alias element
+@mixin e($element) {
+    @include element($element)  {
+        @content;
+    }
+}
+
+/// @alias modifier
+@mixin m($modifier) {
+    @include modifier($modifier) {
+        @content;
+    }
+}
+
+// Example
+// .block {
+//     /* CSS declarations for `.block` */
+//
+//     @include e('element') {
+//         /* CSS declarations for `.block__element` */
+//     }
+//
+//     @include m('modifier') {
+//         /* CSS declarations for `.block--modifier` */
+//
+//         @include e('element') {
+//             /* CSS declarations for `.block--modifier__element` */
+//         }
+//     }
+// }

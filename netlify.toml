@@ -1,0 +1,3 @@
+[build]
+  Command = "gulp build"
+  Publish = "_site"

@@ -1,0 +1,11 @@
+<ul>
+{% for p in site.pages %}
+  {% if p.title %}
+  {% unless p.show_in_nav == false %}
+  <li>
+      <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+  </li>
+  {% endunless %}
+  {% endif %}
+{% endfor %}
+</ul>

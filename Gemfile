@@ -4,7 +4,14 @@ source "https://rubygems.org"
 # ruby '2.2.3'
 
 # Gem Requirements
-gem 'sass',  '>=3.4.3'
-gem 'jekyll', '>=3.0'
-gem 'jekyll-sitemap'
-gem 'jekyll-paginate'
+gem 'sass'
+gem 'jekyll', '~> 3.0'
+gem 'rake'
+
+group :jekyll_plugins do
+  gem 'jekyll-sitemap'
+  gem 'jekyll-paginate'
+  # gem 'jekyll-contentful'
+  gem 'jekyll-contentful-data-import'
+  gem 'octopress-minify-html'
+end

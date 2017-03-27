@@ -1,9 +1,10 @@
-# Stylesheet
-assets/css/app.css
+# Stylesheets
+assets/css/*
+!assets/css/.gitkeep
 
 # JavaScript
 assets/js/scripts_head.js
-assets/js/app.js
+assets/js/app.min.js
 rev-manifest.json
 
 # Cache
@@ -55,3 +56,9 @@ Gemfile.lock
 
 # Netlify CMS
 .users.yml
+
+# Environment Variables for project
+.env
+
+# Dev Jekyll config
+_config_dev.yml

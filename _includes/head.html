@@ -28,10 +28,22 @@
 
   <meta name="google-site-verification" content="{{ site.google-verification }}">
 
+  {% if site.env == "development" }
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/app.css">
+  {% else %}
+    {% comment %}
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/styles.css">
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/medium.css" media="screen and (min-width:40em)">
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/large.css" media="screen and (min-width:64em)">
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/xlarge.css" media="screen and (min-width:75em)">
+    {% endcomment %}
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/styles.css">
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/screen-and-min-width-40em.css" media="screen and (min-width:40em)">
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/screen-and-min-width-64em.css" media="screen and (min-width:64em)">
+  {% endif %}
 
-  <link rel="stylesheet" href="assets/css/app.css">
   <link rel="canonical" href="{{ page.url | replace:'index.html',''  }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="feed.xml" />
 
-  <script src="assets/js/scripts_head.js"></script>
+  <script src="{{ site.url }}/assets/js/scripts_head.js"></script>
 </head>
